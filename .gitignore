@@ -1,0 +1,10 @@
+work/
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.msapp
+*.zip
+*.log
+auth/

@@ -1,0 +1,146 @@
+Screens:
+  Screen1:
+    Properties:
+      Fill: =RGBA(245, 247, 249, 1)
+    Children:
+      - StyledMainContainer1:
+          Control: GroupContainer
+          Variant: ManualLayout
+          Properties:
+            BorderColor: =RGBA(226, 232, 236, 1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =If(Self.Width < 460, 530, 460)
+            RadiusBottomLeft: =24
+            RadiusBottomRight: =24
+            RadiusTopLeft: =24
+            RadiusTopRight: =24
+            Width: =Min(680, Parent.Width - 32)
+            X: =(Parent.Width - Self.Width) / 2
+            Y: =Max(16, (Parent.Height - Self.Height) / 2)
+          Children:
+            - StyledStepLabel:
+                Control: Label
+                Properties:
+                  Align: =Align.Center
+                  Color: =RGBA(14, 105, 94, 1)
+                  Fill: =RGBA(232, 245, 241, 1)
+                  FocusedBorderColor: =RGBA(14, 105, 94, 1)
+                  FocusedBorderThickness: =2
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =32
+                  Size: =10
+                  TabIndex: =0
+                  Text: ="STAP 1 · OVER JOU"
+                  Width: =166
+                  X: =If(Parent.Width < 460, 24, 48)
+                  Y: =40
+            - StyledTitleLabel:
+                Control: Label
+                Properties:
+                  Color: =RGBA(24, 39, 48, 1)
+                  FocusedBorderColor: =RGBA(14, 105, 94, 1)
+                  FocusedBorderThickness: =2
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =60
+                  PaddingLeft: =0
+                  Role: =TextRole.Heading1
+                  Size: =If(Parent.Width < 460, 25, 32)
+                  TabIndex: =0
+                  Text: ="Wat is je geslacht?"
+                  Width: =Parent.Width - 2 * Self.X
+                  X: =StyledStepLabel.X
+                  Y: =96
+            - StyledDescriptionLabel:
+                Control: Label
+                Properties:
+                  Color: =RGBA(91, 107, 117, 1)
+                  FocusedBorderColor: =RGBA(14, 105, 94, 1)
+                  FocusedBorderThickness: =2
+                  Font: =Font.'Segoe UI'
+                  Height: =56
+                  PaddingLeft: =0
+                  Size: =12
+                  TabIndex: =0
+                  Text: ="Kies hieronder wat voor jou van toepassing is. Je kunt je keuze nog aanpassen."
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.Width - 2 * Self.X
+                  X: =StyledStepLabel.X
+                  Y: =160
+            - StyledManButton:
+                Control: Classic/Button
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =If(varGeslacht = "Man", RGBA(14, 105, 94, 1), RGBA(220, 227, 231, 1))
+                  BorderThickness: =If(varGeslacht = "Man", 2, 1)
+                  Color: =If(varGeslacht = "Man", RGBA(14, 105, 94, 1), RGBA(24, 39, 48, 1))
+                  Fill: =If(varGeslacht = "Man", RGBA(232, 245, 241, 1), RGBA(250, 252, 253, 1))
+                  FocusedBorderColor: =RGBA(14, 105, 94, 1)
+                  FocusedBorderThickness: =3
+                  Font: =Font.'Segoe UI'
+                  Height: =104
+                  HoverBorderColor: =RGBA(14, 105, 94, 1)
+                  HoverColor: =RGBA(14, 105, 94, 1)
+                  HoverFill: =RGBA(238, 247, 244, 1)
+                  OnSelect: =Set(varGeslacht, "Man")
+                  PaddingLeft: =24
+                  PressedBorderColor: =RGBA(14, 105, 94, 1)
+                  PressedColor: =RGBA(14, 105, 94, 1)
+                  PressedFill: =RGBA(218, 239, 233, 1)
+                  RadiusBottomLeft: =16
+                  RadiusBottomRight: =16
+                  RadiusTopLeft: =16
+                  RadiusTopRight: =16
+                  Size: =20
+                  Text: =If(varGeslacht = "Man", "Man    ✓", "Man")
+                  Tooltip: =If(varGeslacht = "Man", "Man, geselecteerd", "Kies Man")
+                  Width: =If(Parent.Width < 460, Parent.Width - 2 * Self.X, (Parent.Width - 2 * Self.X - 16) / 2)
+                  X: =StyledStepLabel.X
+                  Y: =240
+            - StyledVrouwButton:
+                Control: Classic/Button
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =If(varGeslacht = "Vrouw", RGBA(14, 105, 94, 1), RGBA(220, 227, 231, 1))
+                  BorderThickness: =If(varGeslacht = "Vrouw", 2, 1)
+                  Color: =If(varGeslacht = "Vrouw", RGBA(14, 105, 94, 1), RGBA(24, 39, 48, 1))
+                  Fill: =If(varGeslacht = "Vrouw", RGBA(232, 245, 241, 1), RGBA(250, 252, 253, 1))
+                  FocusedBorderColor: =RGBA(14, 105, 94, 1)
+                  FocusedBorderThickness: =3
+                  Font: =Font.'Segoe UI'
+                  Height: =104
+                  HoverBorderColor: =RGBA(14, 105, 94, 1)
+                  HoverColor: =RGBA(14, 105, 94, 1)
+                  HoverFill: =RGBA(238, 247, 244, 1)
+                  OnSelect: =Set(varGeslacht, "Vrouw")
+                  PaddingLeft: =24
+                  PressedBorderColor: =RGBA(14, 105, 94, 1)
+                  PressedColor: =RGBA(14, 105, 94, 1)
+                  PressedFill: =RGBA(218, 239, 233, 1)
+                  RadiusBottomLeft: =16
+                  RadiusBottomRight: =16
+                  RadiusTopLeft: =16
+                  RadiusTopRight: =16
+                  Size: =20
+                  Text: =If(varGeslacht = "Vrouw", "Vrouw    ✓", "Vrouw")
+                  Tooltip: =If(varGeslacht = "Vrouw", "Vrouw, geselecteerd", "Kies Vrouw")
+                  Width: =StyledManButton.Width
+                  X: =If(Parent.Width < 460, StyledManButton.X, StyledManButton.X + StyledManButton.Width + 16)
+                  Y: =If(Parent.Width < 460, StyledManButton.Y + StyledManButton.Height + 16, StyledManButton.Y)
+            - StyledSelectionLabel:
+                Control: Label
+                Properties:
+                  Color: =If(IsBlank(varGeslacht), RGBA(91, 107, 117, 1), RGBA(14, 105, 94, 1))
+                  FocusedBorderColor: =RGBA(14, 105, 94, 1)
+                  FocusedBorderThickness: =2
+                  Font: =Font.'Segoe UI'
+                  Live: =Live.Polite
+                  PaddingLeft: =0
+                  Size: =11
+                  TabIndex: =0
+                  Text: =If(IsBlank(varGeslacht), "Selecteer een optie om deze stap in te vullen.", "Je keuze is " & varGeslacht)
+                  Width: =Parent.Width - 2 * Self.X
+                  X: =StyledStepLabel.X
+                  Y: =StyledVrouwButton.Y + StyledVrouwButton.Height + 24
